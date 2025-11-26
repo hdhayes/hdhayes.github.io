@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-base-200">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-lg sticky top-0 z-50">
+        <div class="navbar-start">
+            <a href="/" class="btn btn-ghost text-xl">{{ site.title }}</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/#projects">Projects</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-sm gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                    Theme
+                </label>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-200 rounded-box w-52">
+                    <li><a onclick="setTheme('light')">Light</a></li>
+                    <li><a onclick="setTheme('dark')">Dark</a></li>
+                    <li><a onclick="setTheme('synthwave')">Synthwave</a></li>
+                    <li><a onclick="setTheme('cyberpunk')">Cyberpunk</a></li>
+                    <li><a onclick="setTheme('dracula')">Dracula</a></li>
+                    <li><a onclick="setTheme('night')">Night</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-base-100 text-base-content mt-16">
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="https://github.com/{{ site.author.github }}" target="_blank" class="link link-hover">GitHub</a>
+                <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" class="link link-hover">Twitter</a>
+                <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" class="link link-hover">LinkedIn</a>
+            </div>
+        </div>
+        <div>
+            <p>© {{ 'now' | date: "%Y" }} {{ site.author.name }}. Built with Jekyll & DaisyUI.</p>
+        </div>
+    </footer>
+
+    <script>
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+        const savedTheme = localStorage.getItem('theme') || 'synthwave';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html>

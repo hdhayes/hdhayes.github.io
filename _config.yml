@@ -1,0 +1,29 @@
+# Site settings
+title: Hunter Hayes
+description: Developer & Tech Enthusiast
+url: "https://hunterhayes.dev"
+baseurl: ""
+
+# Author
+author:
+  name: Hunter Hayes
+  email: your.email@example.com
+  github: hdhayes
+  twitter: hdhayes
+  linkedin: hdhayes
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
