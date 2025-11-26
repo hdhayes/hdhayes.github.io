@@ -25,6 +25,6 @@ I believe in learning in public and sharing knowledge with the developer communi
 
 ## Stay Connected
 
-Feel free to reach out on [GitHub](https://github.com/hdhayes), [Twitter](https://twitter.com/hdhayes23), or [LinkedIn](https://linkedin.com/in/hdhayes).
+Feel free to reach out on [GitHub](https://github.com/hdhayes), [Twitter](https://twitter.com/hdhayes23), or [LinkedIn](https://linkedin.com/in/hunter-hayes-ds).
 
 Looking forward to sharing more content soon!
